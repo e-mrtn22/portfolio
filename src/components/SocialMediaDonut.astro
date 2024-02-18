@@ -1,0 +1,40 @@
+---
+import {socialMedia} from '@cv'
+import Icon from '@/components/Icon.astro'
+interface Props {
+  size? : string;
+  iconSize?: string;
+}
+const {size = '200px', iconSize = '30px'} = Astro.props;
+---
+<div 
+  class={"donut relative flex flex-row justify-center items-center"}
+  style=`width:${size}; height: ${size}`
+  >
+  {socialMedia.map(({network, username, url, color}, index) => (
+    <div 
+      class="element absolute bg-gray-500 rounded-full flex items-center justify-center"
+      style={`--bg-hover-color: ${color};width: ${iconSize}; height: ${iconSize};transform: rotate(${(index * 360 / socialMedia.length)-90}deg) translate(${(parseInt(size) - parseInt(iconSize))/2}px) rotate(-${(index * 360 / socialMedia.length)+270}deg);`}
+      >
+      <a class="w-full" href={`${url}`} target="_blank" rel="noopener noreferrer">
+        <Icon 
+          iconName={`${network}`} 
+          style='fill-white p-0.5'
+        />
+      </a>
+    </div>
+  ))}
+  <div 
+    class="circle-container w-full h-full"
+    style=`padding: ${(parseInt(iconSize) / 2)}px`>
+    <div class="circle flex flex-row justify-center items-center rounded-full border border-white w-full h-full">
+      <h1 class="text-white">Hola</h1>
+    </div>
+  </div>
+</div>
+
+<style>
+  .element:hover {
+    background-color: var(--bg-hover-color, red);
+  }
+</style>

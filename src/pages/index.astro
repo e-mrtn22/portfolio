@@ -1,14 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Icon from '../components/Icon.astro'
+import Layout from '@/layouts/Layout.astro';
+import SocialMediaDonut from '@/components/SocialMediaDonut.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="flex w-full hover:bg-blue-300">
-		<Icon iconName='Instagram' style='fill-white w-16'/>
-		<Icon iconName='Twitter' style='fill-white w-16'/>
-		<Icon iconName='LinkedIn' style='fill-white w-16'/>
-	</div>
+	<h1>Hola</h1>
+	<SocialMediaDonut size='200px' iconSize='50px'>
+	</SocialMediaDonut>
 </Layout>
 
 <style>
