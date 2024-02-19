@@ -16,10 +16,10 @@ const {size = '200px', iconSize = '30px'} = Astro.props;
       class="element absolute bg-gray-500 rounded-full flex items-center justify-center"
       style={`--bg-hover-color: ${color};width: ${iconSize}; height: ${iconSize};transform: rotate(${(index * 360 / socialMedia.length)-90}deg) translate(${(parseInt(size) - parseInt(iconSize))/2}px) rotate(-${(index * 360 / socialMedia.length)+270}deg);`}
       >
-      <a class="w-full" href={`${url}`} target="_blank" rel="noopener noreferrer">
+      <a class="w-full rounded-full" href={`${url}`} target="_blank" rel="noopener noreferrer">
         <Icon 
           iconName={`${network}`} 
-          style='fill-white p-0.5'
+          style='fill-white p-1'
         />
       </a>
     </div>

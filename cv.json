@@ -21,27 +21,60 @@
       "username": "e.mrtn22",
       "url": "https://instagram.com/e.mrtn22",
       "color": "#1da1f2"
-    }
-    ,
+    },
     {
-      "network": "Twitter",
+      "network": "TikTok",
       "username": "e.mrtn22",
       "url": "https://instagram.com/e.mrtn22",
-      "color": "#1da1f2"
-    }
-    ,
+      "color": "#f62525"
+    },
     {
-      "network": "Twitter",
+      "network": "Youtube",
       "username": "e.mrtn22",
       "url": "https://instagram.com/e.mrtn22",
-      "color": "#1da1f2"
-    }
-    ,
+      "color": "#ff0000"
+    },
     {
-      "network": "Twitter",
+      "network": "Discord",
       "username": "e.mrtn22",
       "url": "https://instagram.com/e.mrtn22",
-      "color": "#1da1f2"
+      "color": "#7289da"
+    },
+    {
+      "network": "Messenger",
+      "username": "e.mrtn22",
+      "url": "https://instagram.com/e.mrtn22",
+      "color": "#0078ff"
+    },
+    {
+      "network": "Pinterest",
+      "username": "e.mrtn22",
+      "url": "https://instagram.com/e.mrtn22",
+      "color": "#bd081c"
+    },
+    {
+      "network": "Reddit",
+      "username": "e.mrtn22",
+      "url": "https://instagram.com/e.mrtn22",
+      "color": "#ff5700"
+    },
+    {
+      "network": "Spotify",
+      "username": "e.mrtn22",
+      "url": "https://instagram.com/e.mrtn22",
+      "color": "#1db954"
+    },
+    {
+      "network": "Twitch",
+      "username": "e.mrtn22",
+      "url": "https://instagram.com/e.mrtn22",
+      "color": "#6441a5"
+    },
+    {
+      "network": "Github",
+      "username": "e.mrtn22",
+      "url": "https://instagram.com/e.mrtn22",
+      "color": "#333"
     }
   ]
 }
