@@ -3,18 +3,18 @@ import {socialMedia} from '@cv'
 import Icon from '@/components/Icon.astro'
 interface Props {
   size? : string;
-  iconSize?: string;
-  showCircle?: boolean;
+  iconSize?: string; // Optional parameter from general donut
   rotation?: 'left' | 'right';
   startAngle?: number;
   totalAngle?: number;
+  backgroundColor?: string;
 }
-const {size = '200px', 
-      iconSize = '30px',
-      showCircle = false,
-      rotation = 'right',
-      startAngle = 90,
-      totalAngle = 360,
+const {
+  size = '200px', 
+  iconSize = '30px',
+  rotation = 'right',
+  startAngle = 90,
+  backgroundColor = 'transparent'
 } = Astro.props;
 
 let rotationValue = rotation === 'left' ? -1 : 1;
@@ -23,9 +23,10 @@ let rotationValue = rotation === 'left' ? -1 : 1;
   class="donut relative flex flex-row justify-center items-center"
   style=`width:${size}; height: ${size}`
   >
+  <!-- Here goes what its going to be rendered in the donut -->
   {socialMedia.map(({network, username, url, color}, index) => (
     <div 
-      class="element absolute bg-gray-500 rounded-full flex items-center justify-center"
+      class="element transition-opacity ease-out duration-750 absolute opacity-0 bg-gray-500 rounded-full flex items-center justify-center z-[2]"
       style={`
         --bg-hover-color: ${color};
         width: ${iconSize}; 
@@ -36,6 +37,7 @@ let rotationValue = rotation === 'left' ? -1 : 1;
       `}
       >
       <a class="w-full rounded-full" href={`${url}`} target="_blank" rel="noopener noreferrer">
+        <title>{network}</title>
         <Icon 
           iconName={`${network}`} 
           style='fill-white p-1'
@@ -43,18 +45,24 @@ let rotationValue = rotation === 'left' ? -1 : 1;
       </a>
     </div>
   ))}
-  {showCircle ? (
-    <div 
-      class="circle-container w-full h-full"
-      style={`padding: ${(parseInt(iconSize) / 2)}px`}>
-      <div class="circle flex flex-row justify-center items-center rounded-full border border-white w-full h-full">
-      </div>
+  <div 
+    class="circle-container w-full h-full"
+    style={`padding: ${(parseInt(iconSize) / 2)}px`}>
+    <div class="circle flex flex-row justify-center items-center rounded-full border-white w-full h-full overflow-hidden"
+      style={`background-color: ${backgroundColor}`}>
+      <slot class="z-[0]"></slot>
     </div>
-  ): (<></>)}
+  </div>
 </div>
 
 <style>
   .element:hover {
     background-color: var(--bg-hover-color, black);
+  }
+
+  .donut:hover .element{
+    opacity: 100;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
   }
 </style>

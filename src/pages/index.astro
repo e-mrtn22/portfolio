@@ -4,14 +4,21 @@ import SocialMediaDonut from '@/components/SocialMediaDonut.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-	<SocialMediaDonut 
-		size='300px' 
-		iconSize='40px' 
-		showCircle={true} 
-		rotation='left'
-		startAngle={90}
-		totalAngle={270}
-	></SocialMediaDonut>
+	<div class="flex">
+		<div class="content flex-1">
+			<h1 class="text-white">Hi! I'm Edgar</h1>
+			<p> Desarrollador web</p>	
+		</div>
+		<SocialMediaDonut 
+			size='250px' 
+			iconSize='40px' 
+			rotation='right'
+			startAngle={0}
+			backgroundColor='#fff'
+		>
+			<img src="/foto-rosco-ej.webp" class="h-full"></img>
+		</SocialMediaDonut>
+	</div>
 </Layout>
 
 <style>
